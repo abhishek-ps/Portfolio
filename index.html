@@ -6,18 +6,21 @@
     <title>Abhishek P S | Portfolio</title>
     <meta
       name="description"
-      content="A modern personal portfolio website for Abhishek P S, showcasing skills, projects, and a strong digital presence."
+      content="Personal portfolio of Abhishek P S — Creative Developer, Problem Solver, and Design Thinker."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero">
+    <!-- Animated background particles -->
+    <canvas id="particles" aria-hidden="true"></canvas>
+
+    <header class="hero" id="home">
       <nav class="navbar">
         <a href="#home" class="brand">Abhishek<span>PS</span></a>
         <div class="nav-links">
@@ -26,117 +29,223 @@
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </div>
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
 
-      <div class="hero-content" id="home">
-        <div class="hero-copy">
-          <p class="eyebrow">Creative Developer • Problem Solver • Design Thinker</p>
-          <h1>I build polished digital experiences that feel effortless and memorable.</h1>
+      <div class="hero-content">
+        <!-- Avatar / Photo -->
+        <div class="avatar-wrap" data-aos="fade-right">
+          <div class="avatar-ring"></div>
+          <a
+            href="https://www.linkedin.com/in/abhishek-p-s-08553232a"
+            target="_blank"
+            rel="noreferrer"
+            class="avatar-link"
+            aria-label="Visit Abhishek's LinkedIn profile"
+          >
+            <div class="avatar">
+              <span class="avatar-initials">A</span>
+              <div class="avatar-overlay">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                <span>View Profile</span>
+              </div>
+            </div>
+          </a>
+          <div class="avatar-badge">Available for hire</div>
+        </div>
+
+        <!-- Copy -->
+        <div class="hero-copy" data-aos="fade-left">
+          <p class="eyebrow">Creative Developer &bull; Problem Solver &bull; Design Thinker</p>
+          <h1>I build <span class="gradient-text">polished digital</span> experiences that feel effortless.</h1>
           <p class="lead">
-            I’m Abhishek P S, a curious and ambitious professional who enjoys turning ideas into
-            clean, modern, and user-focused experiences. My work is driven by a blend of
-            creativity, technical skill, and a strong interest in continuous learning.
+            Hey, I'm Abhishek P S — curious, ambitious, and driven by a passion for turning ideas
+            into clean, modern, user-focused experiences. I blend creativity with technical skill
+            to build things that actually matter.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">View My Work</a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/in/abhishek-p-s-08553232a" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+            <a class="btn btn-primary" href="#projects">
+              <span>View My Work</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+            </a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/abhishek-p-s-08553232a" target="_blank" rel="noreferrer">
+              Connect on LinkedIn
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Projects Built</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Passion Driven</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Curiosity</span></div>
           </div>
         </div>
-        <div class="hero-card">
-          <div class="card-glow"></div>
-          <h3>What I bring</h3>
-          <ul>
-            <li>Modern front-end development</li>
-            <li>Thoughtful, responsive UI</li>
-            <li>Strong attention to detail</li>
-            <li>Clear communication and collaboration</li>
-          </ul>
-        </div>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
       </div>
     </header>
 
     <main>
+      <!-- About -->
       <section class="section" id="about">
-        <div class="section-heading">
+        <div class="section-heading" data-aos="fade-up">
           <p class="eyebrow">About Me</p>
-          <h2>Crafting meaningful digital presence with intent.</h2>
+          <h2>Crafting meaningful digital presence <span class="gradient-text">with intent.</span></h2>
         </div>
         <div class="about-grid">
-          <p>
-            I’m passionate about building interfaces and experiences that are both visually
-            engaging and genuinely useful. Whether it’s a landing page, a personal brand site, or
-            a product experience, I focus on clarity, performance, and a polished feel.
-          </p>
-          <p>
-            My approach is simple: combine creativity with strategy, keep learning, and make sure
-            every detail supports the goal of the experience.
-          </p>
+          <div class="about-text" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              I'm passionate about building interfaces and experiences that are both visually
+              engaging and genuinely useful. Whether it's a landing page, a personal brand site,
+              or a product experience — I focus on clarity, performance, and a polished feel.
+            </p>
+            <p>
+              My approach is simple: combine creativity with strategy, keep learning relentlessly,
+              and make sure every detail supports the goal of the experience.
+            </p>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/abhishek-p-s-08553232a" target="_blank" rel="noreferrer" style="margin-top:20px;display:inline-flex;align-items:center;gap:8px;">
+              <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              Connect on LinkedIn
+            </a>
+          </div>
+          <div class="journey-timeline" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="timeline-title">My Journey</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-body">
+                  <span class="timeline-year">Now</span>
+                  <p>Building polished web experiences and leveling up daily.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-body">
+                  <span class="timeline-year">2024</span>
+                  <p>Deepened front-end skills — responsive design, UI/UX thinking.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-body">
+                  <span class="timeline-year">2023</span>
+                  <p>Discovered my passion for clean, purposeful development.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
+      <!-- Skills -->
       <section class="section" id="skills">
-        <div class="section-heading">
+        <div class="section-heading" data-aos="fade-up">
           <p class="eyebrow">Core Skills</p>
-          <h2>Tools and strengths that help ideas come alive.</h2>
+          <h2>Tools and strengths that <span class="gradient-text">bring ideas alive.</span></h2>
         </div>
         <div class="skills-grid">
-          <div class="skill-card">
+          <div class="skill-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="skill-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
             <h3>Frontend</h3>
             <p>HTML, CSS, JavaScript, responsive design, smooth user interactions.</p>
           </div>
-          <div class="skill-card">
+          <div class="skill-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="skill-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
             <h3>Design Thinking</h3>
             <p>Clean visual systems, strong hierarchy, and intuitive user experiences.</p>
           </div>
-          <div class="skill-card">
-            <h3>Development Mindset</h3>
-            <p>Fast learning, adaptability, and a focus on solving problems effectively.</p>
+          <div class="skill-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="skill-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3>Fast Learner</h3>
+            <p>Rapid skill acquisition, adaptability, and a focus on solving problems effectively.</p>
           </div>
-          <div class="skill-card">
+          <div class="skill-card" data-aos="fade-up" data-aos-delay="240">
+            <div class="skill-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
             <h3>Communication</h3>
             <p>Clear collaboration, professional presentation, and thoughtful execution.</p>
           </div>
         </div>
       </section>
 
+      <!-- Projects -->
       <section class="section" id="projects">
-        <div class="section-heading">
+        <div class="section-heading" data-aos="fade-up">
           <p class="eyebrow">Selected Work</p>
-          <h2>Projects that reflect creativity and purpose.</h2>
+          <h2>Projects that reflect <span class="gradient-text">creativity and purpose.</span></h2>
         </div>
         <div class="projects-grid">
-          <article class="project-card">
+          <article class="project-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="project-number">01</div>
             <h3>Personal Brand Site</h3>
-            <p>A polished, modern landing page designed to communicate identity, value, and personality.</p>
+            <p>A polished, modern landing page designed to communicate identity, value, and personality with a premium feel.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
           </article>
-          <article class="project-card">
+          <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-number">02</div>
             <h3>Interactive Web Experience</h3>
-            <p>Focused on clean layout, compelling storytelling, and responsive usability across devices.</p>
+            <p>Focused on clean layout, compelling storytelling, and responsive usability across all devices and screen sizes.</p>
+            <div class="project-tags">
+              <span>Responsive</span><span>UX</span><span>Design</span>
+            </div>
           </article>
-          <article class="project-card">
+          <article class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-number">03</div>
             <h3>Creative Digital Concepts</h3>
-            <p>Exploring visual consistency, motion, and user-centered design principles in every build.</p>
+            <p>Exploring visual consistency, subtle motion, and user-centered design principles in every thoughtful build.</p>
+            <div class="project-tags">
+              <span>Motion</span><span>UI</span><span>Concept</span>
+            </div>
           </article>
         </div>
       </section>
 
+      <!-- Contact -->
       <section class="section contact-section" id="contact">
-        <div class="section-heading">
-          <p class="eyebrow">Let’s Connect</p>
-          <h2>Open to opportunities, collaborations, and meaningful projects.</h2>
-        </div>
-        <div class="contact-box">
-          <p>
-            If you’re looking for someone who blends creativity, focus, and a strong drive to grow,
-            I’d love to connect.
+        <div class="contact-inner" data-aos="fade-up">
+          <p class="eyebrow">Let's Connect</p>
+          <h2>Open to opportunities, collaborations, <span class="gradient-text">and great ideas.</span></h2>
+          <p class="contact-desc">
+            If you're looking for someone who blends creativity, focus, and a strong drive to
+            grow — I'd love to have a conversation.
           </p>
-          <a class="btn btn-primary" href="https://www.linkedin.com/in/abhishek-p-s-08553232a" target="_blank" rel="noreferrer">Visit LinkedIn Profile</a>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="https://www.linkedin.com/in/abhishek-p-s-08553232a" target="_blank" rel="noreferrer">
+              <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              Visit LinkedIn Profile
+            </a>
+          </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>© <span id="year"></span> Abhishek P S. Crafted with care.</p>
+      <div class="footer-inner">
+        <span class="brand" style="font-size:1rem;">Abhishek<span>PS</span></span>
+        <p>© <span id="year"></span> Abhishek P S. Crafted with care.</p>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/abhishek-p-s-08553232a" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
